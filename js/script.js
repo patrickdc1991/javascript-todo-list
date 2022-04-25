@@ -1,5 +1,14 @@
 let items = [];
 
+function itemDelete(event){
+    let item = event.currentTarget.closest(".item");
+    const index = items.indexOf(item);
+    if (index > -1) {
+        items.splice(index, 1);
+    }
+    item.remove();
+}
+
 function addItem(){
     let item = document.createElement("div");
 
@@ -17,12 +26,15 @@ function addItem(){
     let deleteContainer = document.createElement("div");
     let deletePara = document.createElement("p");
     let deleteText = document.createTextNode("x")
-    deletePara.appendChild(deleteText);
+    deletePara.appendChild(deleteText);lem
+    deleteContainer.setAttribute("class","deleteButton")
+    deleteContainer.addEventListener("click",itemDelete);
     deleteContainer.appendChild(deletePara);
 
     item.appendChild(checkContainer);
     item.appendChild(textContainer);
     item.appendChild(deleteContainer);
+    item.setAttribute("class","item")
 
     document.getElementById("items").appendChild(item);
     items.push(item);
