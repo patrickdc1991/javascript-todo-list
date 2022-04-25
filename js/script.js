@@ -29,25 +29,29 @@ function addItem(){
     let check = document.createElement("input");
     check.setAttribute("type","checkbox");
     check.addEventListener("change", update);
+    checkContainer.setAttribute("class","checkContainer")
     checkContainer.appendChild(check);
 
     let textContainer = document.createElement("div");
     let text = document.createElement("input");
     text.setAttribute("type","text");
     text.placeholder = "to do list item...";
+    textContainer.setAttribute("class","textContainer")
     textContainer.appendChild(text);
 
-    let deleteContainer = document.createElement("div");
-    let deletePara = document.createElement("p");
-    let deleteText = document.createTextNode("x")
-    deletePara.appendChild(deleteText);
-    deleteContainer.setAttribute("class","deleteButton")
-    deleteContainer.addEventListener("click",itemDelete);
-    deleteContainer.appendChild(deletePara);
+    let deleteButton = document.createElement("input");
+    deleteButton.setAttribute("type","button");
+    deleteButton.setAttribute("value",String.fromCharCode(0x00D7));
+    deleteButton.setAttribute("class","deleteButton");
+    deleteButton.addEventListener("click",itemDelete);
+
+    let clearBoth = document.createElement("div");
+    clearBoth.setAttribute("class","clearBoth")
 
     item.appendChild(checkContainer);
     item.appendChild(textContainer);
-    item.appendChild(deleteContainer);
+    item.appendChild(deleteButton);
+    item.appendChild(clearBoth);
     item.setAttribute("class","item")
 
     document.getElementById("items").appendChild(item);
