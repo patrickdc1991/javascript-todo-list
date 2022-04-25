@@ -1,0 +1,9 @@
+#container, #title, #items, #addBtn {
+    border: 1px solid black;
+}
+
+#addBtn {
+    background: green;
+    color: white;
+    text-align: center;
+}
