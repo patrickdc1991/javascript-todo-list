@@ -4,8 +4,8 @@ function update(){
     let itemsElement = document.getElementById("items");
     let totalItems = itemsElement.children.length;
     let completedItems = 0;
-    for(let i = 0; i < totalItems; i++){
-        if(itemsElement.children[i].querySelector("input[type=\"checkbox\"]").checked){
+    for(let i = 0; i < items.length; i++){
+        if(items[i].querySelector("input[type=\"checkbox\"]").checked){
             completedItems++;
         }
     }
